@@ -1,9 +1,18 @@
 package ar.jluque.annotations;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component("comercial")
+@Component
 public class ComercialExperimentado implements Empleados {
+	
+	
+	private Informes informes;
+	
+	@Autowired
+	public ComercialExperimentado(Informes informes) {
+		this.informes = informes;
+	}
 
 	@Override
 	public String getTareas() {
@@ -12,7 +21,7 @@ public class ComercialExperimentado implements Empleados {
 
 	@Override
 	public String getInformes() {
-		return " INFORME generado por el comercial";
+		return " INFORME generado por el comercial. |<INYECCION>| " + informes.getInformeFinanciero();
 	}
 
 }
