@@ -16,10 +16,7 @@ public class UsoAnotations {
 		System.out.println("Tareas: " + nuevoEmpleado.getTareas());
 		System.out.println("Infomres: "+ nuevoEmpleado.getInformes());
 		
-		
 		contexto.close();
-		
-		
 	}
 
 }

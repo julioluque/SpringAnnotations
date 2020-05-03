@@ -3,11 +3,11 @@ package ar.jluque.annotations;
 import org.springframework.stereotype.Component;
 
 @Component
-public class InformeFinanciero1 implements Informes {
+public class InformeFinanciero3 implements Informes{
 
 	@Override
 	public String getInformeFinanciero() {
-		return "Informe financiero 1";
+		return "Infomre financiero 3";
 	}
 
 }

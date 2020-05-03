@@ -1,6 +1,7 @@
 package ar.jluque.annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -15,23 +16,21 @@ public class ComercialExperimentado implements Empleados {
 	 */
 	
 	@Autowired
+	@Qualifier("informeFinanciero4")
 	private Informes informes;
 	
 	public ComercialExperimentado() {
 	}
 	
-//	@Autowired
 	public ComercialExperimentado(Informes informes) {
 		this.informes = informes;
 	}
 	
 	
-//	@Autowired
 	public void setInformes(Informes informes) {
 		this.informes = informes;
 	}
 
-//	@Autowired
 	public void metodoNormal(Informes informes) {
 		this.informes = informes;
 	}
