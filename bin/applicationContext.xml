@@ -9,7 +9,4 @@
 
 	<context:component-scan base-package="ar.jluque.annotations"></context:component-scan>
 
-
-
-
 </beans>
