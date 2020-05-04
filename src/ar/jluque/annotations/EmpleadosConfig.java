@@ -8,15 +8,15 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan("ar.jluque.annotations")
 public class EmpleadosConfig {
 
-	// Definimos el bean para la clase: InformeFinancieroCompras. 
-	// El nombre del metodo sera el id del bean inyectado 
+	// Definimos el bean para la clase: InformeFinancieroCompras.
+	// El nombre del metodo sera el id del bean inyectado
 	@Bean
 	public Informes miInforme() {
 		return new InformeFinancieroCompras();
 	}
-	
+
 	// Definimos el bean para la clase: DirectorFinanciero
-	// El nombre del metodo debe ser el id de la clase osea el mismo pero con minuscula
+	// El nombre del metodo debe ser el mismo id de la clase con minuscula
 	@Bean
 	public Empleados directorFinanciero() {
 		return new DirectorFinanciero(miInforme());
