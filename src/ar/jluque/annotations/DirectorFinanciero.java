@@ -3,7 +3,6 @@ package ar.jluque.annotations;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -11,11 +10,10 @@ import org.springframework.stereotype.Component;
 @Scope("singleton")
 public class DirectorFinanciero implements Empleados {
 
-	private InformeFinancieroCompras informefinancieroCompras;
+	private Informes informes;
 	
-	@Autowired
-	public DirectorFinanciero(InformeFinancieroCompras informeFinancieroCompras) {
-		this.informefinancieroCompras = informeFinancieroCompras;
+	public DirectorFinanciero(Informes informes) {
+		this.informes = informes;
 	}
 	
 	@Override
@@ -25,7 +23,7 @@ public class DirectorFinanciero implements Empleados {
 
 	@Override
 	public String getInformes() {
-		return "Informe sobre revision de:: " + informefinancieroCompras.getInformeFinanciero();
+		return "Informe sobre revision de:: ";
 	}
 	
 	@PostConstruct
