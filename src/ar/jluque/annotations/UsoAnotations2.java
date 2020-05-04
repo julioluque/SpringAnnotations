@@ -17,10 +17,11 @@ public class UsoAnotations2 {
 			System.out.println(emp1.hashCode());
 			System.out.println(emp2.hashCode());
 		} else {
-			System.out.println("No apuntan al mismo lugar en memoria");
+			System.out.println("No apuntan al mismo lugar en memoriax");
 			System.out.println(emp1.hashCode());
 			System.out.println(emp2.hashCode());
 		}
-
+		
+		contenedor.close();
 	}
 }

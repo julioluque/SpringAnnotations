@@ -1,12 +1,15 @@
 package ar.jluque.annotations;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope("prototype")
+@Scope("singleton")
 public class ComercialExperimentado implements Empleados {
 	
 	/**
@@ -47,4 +50,17 @@ public class ComercialExperimentado implements Empleados {
 		return " INFORME generado por el comercial. |<INYECCION>| " + informes.getInformeFinanciero();
 	}
 
+	// Ejecucion de codigo despues de la creacion del bean
+	// Cumple misma funcion que init() method
+	@PostConstruct
+	public void EjecutarDespuesDeLaCreacionDelBean() {
+		System.out.println("Ejecutado tras la cracion del bean -> similar init()...");
+	}
+	
+	// Ejecucion de codigo despues de apagado el contendor de spring
+	// Cumple misma funcoin que destroy() method
+	@PreDestroy
+	public void EjecutarAntesDeLaDestrucionDelBean() {
+		System.out.println("Ejecutando antes de la destruccion del bean -> similar destroy()...");
+	}
 }
