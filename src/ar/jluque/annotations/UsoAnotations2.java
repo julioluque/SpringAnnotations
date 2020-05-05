@@ -24,6 +24,10 @@ public class UsoAnotations2 {
 		Empleados e1 = contextJava.getBean("directorFinanciero", Empleados.class);
 		System.out.println(e1.getTareas());
 		System.out.println(e1.getInformes());
+		
+		DirectorFinanciero datos = contextJava.getBean("directorFinanciero", DirectorFinanciero.class);
+		System.out.println(datos.getCorreoElectronico());
+		System.out.println(datos.getNombreMiEmpresa());
 		contextJava.close();
 
 	}
